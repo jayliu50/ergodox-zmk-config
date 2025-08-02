@@ -1,0 +1,24 @@
+// Macros to create tap dance behaviors with different numbers of bindings
+#define TAP_DANCE(name, binding1, binding2) \
+/ { \
+    behaviors { \
+        td_##name: td_##name { \
+            compatible = "zmk,behavior-tap-dance"; \
+            #binding-cells = <0>; \
+            tapping-term-ms = <200>; \
+            bindings = <binding1>, <binding2>; \
+        }; \
+    }; \
+};
+
+#define TAP_DANCE_3(name, binding1, binding2, binding3) \
+/ { \
+    behaviors { \
+        td_##name: td_##name { \
+            compatible = "zmk,behavior-tap-dance"; \
+            #binding-cells = <0>; \
+            tapping-term-ms = <200>; \
+            bindings = <binding1>, <binding2>, <binding3>; \
+        }; \
+    }; \
+};

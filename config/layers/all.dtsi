@@ -2,12 +2,10 @@
 #define SYMB 1
 #define FUNC 2
 #define NUMB 3
-#define _DYN 4
-#define BT   5
+#define CSP  4
 
 #include "00-base.dtsi"
 #include "01-symbols.dtsi"
 #include "02-functions.dtsi"
 #include "03-numpad.dtsi"
-#include "04-dynamic.dtsi"
-#include "05-bluetooth.dtsi"
+#include "04-clip-studio-paint.dtsi"

@@ -1,0 +1,45 @@
+// Core drawing tools
+#define CSP_BRUSH           &kp B
+#define CSP_PEN             &kp P
+#define CSP_FILL            &kp G
+#define CSP_ERASER          &kp E
+#define CSP_BLEND           &kp J
+
+#define CSP_SIZE_UP         &kp RBKT
+#define CSP_SIZE_DOWN       &kp LBKT
+
+// Adjustment
+#define CSP_UNDO            &kp LC(Z)
+#define CSP_REDO            &kp LC(Y)
+
+#define CSP_TRANSFORM       &kp LC(T)
+
+// Color
+#define CSP_SWAP_COLORS     &kp X
+
+// Layer creation and management
+#define CSP_MERGE_DOWN      &kp LC(E)
+
+
+// Selection tools
+#define CSP_SELECT_LASSO    &kp M
+#define CSP_SELECT_NONE     &kp LC(D)
+#define CSP_SELECT_INVERT   &kp LC(LS(I))
+
+// View controls
+#define CSP_HIDE_UI         &kp TAB
+
+
+#define CSP_FIT_WINDOW      &kp LC(N0)
+#define CSP_ZOOM_ACTUAL     &kp LC(LA(N0))
+#define CSP_RESET_VIEW      &kp LC(GRAVE)
+
+#define CSP_ZOOM_IN         &kp LC(PLUS)
+#define CSP_ZOOM_OUT        &kp LC(MINUS)
+#define CSP_ROTATE_LEFT     &kp MINUS
+#define CSP_ROTATE_RIGHT    &kp APOS
+
+// Ruler
+#define CSP_RULERS          &kp U
+#define CSP_RULER_SNAP      &kp LC(N1)
+#define CSP_RULER_SPECIAL   &kp LC(N4)

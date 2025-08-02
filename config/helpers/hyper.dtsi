@@ -1,0 +1,13 @@
+// Hyper key with specific key combination
+#define HYPER_COMBO(key) \
+/ { \
+    macros { \
+        hyp_##key: hyp_##key { \
+            compatible = "zmk,behavior-macro"; \
+            #binding-cells = <0>; \
+            bindings = <&macro_press &kp LCTRL &kp LSHFT &kp LALT>, \
+                        <&macro_tap &kp key>, \
+                        <&macro_release &kp LCTRL &kp LSHFT &kp LALT>; \
+        }; \
+    }; \
+};
