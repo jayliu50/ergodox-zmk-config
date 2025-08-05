@@ -7,6 +7,9 @@
 #define CSP_COLOR_SET            &hyp_P
 #define CSP_COLOR_WHEEL          &hyp_W
 #define CSP_ZOOM_DOUBLE          &hyp_D
+#define CSP_ROTATE_RESET         &hyp_R
+#define CSP_ROTATE_90            &hyp_N9
+#define CSP_ROTATE_270           &hyp_N2
 
 HYPER_COMBO(F)
 HYPER_COMBO(L)
@@ -14,6 +17,9 @@ HYPER_COMBO(C)
 HYPER_COMBO(P)
 HYPER_COMBO(W)
 HYPER_COMBO(D)
+HYPER_COMBO(R)
+HYPER_COMBO(N9)
+HYPER_COMBO(N2)
 
 TAP_DANCE(CSP_UNDO_REDO, CSP_UNDO, CSP_REDO)
 TAP_DANCE(CSP_LAYER, CSP_NEW_LAYER, CSP_NEW_VECTOR_LAYER)
@@ -21,6 +27,9 @@ TAP_DANCE(CSP_SELECT, CSP_SELECT_LASSO, CSP_SELECT_INVERT)
 TAP_DANCE_3(CSP_ZOOM, CSP_ZOOM_ACTUAL, CSP_FIT_WINDOW, CSP_ZOOM_DOUBLE)
 TAP_DANCE(CSP_COLOR_RECALL, CSP_SWAP_COLORS, CSP_COLOR_HISTORY)
 TAP_DANCE(CSP_COLOR_PALETTE, CSP_COLOR_SET, CSP_COLOR_WHEEL)
+TAP_DANCE(CSP_ROTATE_CW, CSP_ROTATE_RIGHT, CSP_ROTATE_90)
+TAP_DANCE(CSP_ROTATE_CCW, CSP_ROTATE_LEFT, CSP_ROTATE_270)
+TAP_DANCE(CSP_VIEW_RESET, CSP_ROTATE_RESET, CSP_RESET_VIEW)
 
 / {
 
@@ -32,14 +41,14 @@ TAP_DANCE(CSP_COLOR_PALETTE, CSP_COLOR_SET, CSP_COLOR_WHEEL)
     clip_studio_paint {
       bindings = <
         &bootloader
-        &to BASE             &none               &none                &td_CSP_COLOR_PALETTE   &td_CSP_COLOR_RECALL       &none                       &kp ESC                                               &trans          &trans         &trans        &trans        &trans        &trans         &trans
-        CSP_HIDE_UI          CSP_FLIP_CANVAS     &td_CSP_ZOOM         CSP_ROTATE_LEFT         CSP_ROTATE_RIGHT           CSP_RESET_VIEW              CSP_SIZE_UP                                           &trans          &trans         &trans        &trans        &trans        &trans         &trans
-        &none                CSP_BLEND           CSP_FILL             CSP_BRUSH               CSP_PEN                    CSP_ERASER                                                                                        &trans         &trans        &trans        &trans        &trans         &trans
-        &kp LSHFT            &none               &none                CSP_TRANSFORM           &td_CSP_SELECT             CSP_SELECT_NONE             CSP_SIZE_DOWN                                         &trans          &trans         &trans        &trans        &trans        &trans         &trans
-        &none                CSP_MERGE_DOWN      &none                &none                   &td_CSP_LAYER                                                                                                                               &trans        &trans        &trans        &trans         &trans
-                                                                                                                        &kp LALT                    CSP_RULERS                                                                           &trans        &trans
-                                                                                              &td_CSP_UNDO_REDO         &kp LCTRL                   CSP_RULER_SNAP                                        &trans          &trans         &trans
-                                                                                                                                                    CSP_RULER_SPECIAL                                     &trans
+        &to BASE             &none               &none                &td_CSP_COLOR_PALETTE         &td_CSP_COLOR_RECALL       &none                      &kp ESC                                               &trans          &trans         &trans        &trans        &trans        &trans         &trans
+        CSP_HIDE_UI          CSP_FLIP_CANVAS     &td_CSP_ZOOM         &td_CSP_ROTATE_CCW            &td_CSP_ROTATE_CW          &td_CSP_VIEW_RESET         CSP_SIZE_UP                                           &trans          &trans         &trans        &trans        &trans        &trans         &trans
+        CSP_BLEND            CSP_FILL            CSP_FIGURE           CSP_BRUSH                     CSP_PEN                    CSP_ERASER                                                                                       &trans         &trans        &trans        &trans        &trans         &trans
+        &kp LSHFT            CSP_CORRECT         CSP_OBJECT           CSP_TRANSFORM                 &td_CSP_SELECT             CSP_SELECT_NONE            CSP_SIZE_DOWN                                         &trans          &trans         &trans        &trans        &trans        &trans         &trans
+        &none                CSP_MERGE_DOWN      &none                &none                         &td_CSP_LAYER                                                                                                                              &trans        &trans        &trans        &trans         &trans
+                                                                                                                              &kp LALT                    CSP_RULERS                                                                           &trans        &trans
+                                                                                                    &td_CSP_UNDO_REDO         &kp LCTRL                   CSP_RULER_SNAP                                        &trans          &trans         &trans
+                                                                                                                                                          CSP_RULER_SPECIAL                                     &trans
       >;
     };
   };

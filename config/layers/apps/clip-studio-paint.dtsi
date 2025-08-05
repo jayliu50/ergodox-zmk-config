@@ -4,6 +4,9 @@
 #define CSP_FILL            &kp G
 #define CSP_ERASER          &kp E
 #define CSP_BLEND           &kp J
+#define CSP_FIGURE          &kp U
+#define CSP_CORRECT         &kp Y
+#define CSP_OBJECT          &kp O
 
 #define CSP_SIZE_UP         &kp RBKT
 #define CSP_SIZE_DOWN       &kp LBKT
@@ -42,4 +45,4 @@
 // Ruler
 #define CSP_RULERS          &kp U
 #define CSP_RULER_SNAP      &kp LC(N1)
-#define CSP_RULER_SPECIAL   &kp LC(N4)
+#define CSP_RULER_SPECIAL   &kp LC(N2)
